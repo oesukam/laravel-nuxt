@@ -6,6 +6,7 @@
     </a>
     <div class="dropdown-menu">
       <nuxt-link
+        v-if="$i18n.locale === 'fr'"
         :to="`/en` + $route.fullPath"
         class="dropdown-item Header__Link"
         active-class="none"
@@ -14,6 +15,7 @@
         {{ $t('english') }}
       </nuxt-link>
       <nuxt-link
+        v-else
         :to="$route.fullPath.replace(/^\/[^\/]+/, '')"
         class="dropdown-item Header__Link"
         active-class="none"

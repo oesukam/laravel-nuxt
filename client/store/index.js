@@ -7,7 +7,6 @@ export const state = () => ({
   locale: 'fr',
   locales: {
     'en': 'EN',
-    'zh-CN': '中文',
     'fr': 'FR'
   }
 })
@@ -21,6 +20,7 @@ export const getters = {
 // mutations
 export const mutations = {
   SET_LANG (state, locale) {
+    console.log('clearrr lang', locale)
     if (state.locales[locale]) {
       state.locale = locale
     }
@@ -33,22 +33,12 @@ export const actions = {
     if (token) {
       commit('auth/SET_TOKEN', token)
     }
-
-    const locale = cookieFromRequest(req, 'locale')
-    if (locale) {
-      commit('SET_LANG', { locale })
-    }
   },
 
   nuxtClientInit ({ commit }) {
     const token = Cookies.get('token')
     if (token) {
       commit('auth/SET_TOKEN', token)
-    }
-
-    const locale = Cookies.get('locale')
-    if (locale) {
-      commit('SET_LANG', { locale })
     }
   }
 }

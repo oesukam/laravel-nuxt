@@ -18,18 +18,18 @@ const SettingsPassword = () => import('~/pages/settings/password').then(m => m.d
 
 const routes = [
   { path: '/', name: 'welcome', component: Welcome },
-  { path: '/en', name: 'en.welcome', component: Welcome },
+  { path: '/:lang', name: 'en.welcome', component: Welcome },
   { path: '/home', name: 'home', component: Home },
-  { path: '/en/home', name: 'en.home', component: Home },
+  { path: '/:lang/home', name: 'en.home', component: Home },
 
   { path: '/login', name: 'login', component: Login },
-  { path: '/en/login', name: 'en.login', component: Login },
+  { path: '/:lang/login', name: 'en.login', component: Login },
   { path: '/register', name: 'register', component: Register },
-  { path: '/en/register', name: 'en.register', component: Register },
+  { path: '/:lang/register', name: 'en.register', component: Register },
   { path: '/password/reset', name: 'password.request', component: PasswordRequest },
-  { path: '/en/password/reset', name: 'en.password.request', component: PasswordRequest },
+  { path: '/:lang/password/reset', name: 'en.password.request', component: PasswordRequest },
   { path: '/password/reset/:token', name: 'password.reset', component: PasswordReset },
-  { path: '/en/password/reset/:token', name: 'en.password.reset', component: PasswordReset },
+  { path: '/:lang/password/reset/:token', name: 'en.password.reset', component: PasswordReset },
 
   { path: '/settings',
     component: Settings,
